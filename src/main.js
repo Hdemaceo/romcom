@@ -12,7 +12,7 @@ var currentCover;
 
 // Add your event listeners here 👇
 window.addEventListener("load", randomizePoster);
-
+randomCoverButton.addEventListener("click", randomizePoster);
 // Create your event handlers and other functions here 👇
 function randomizePoster(){
   cover.src = covers[getRandomIndex(covers)],
