@@ -48,3 +48,15 @@ function randomizePoster(){
   firstDescriptor.innerText = descriptors[getRandomIndex(descriptors)],
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
+function showFormViewPageHandler(){
+  hideHomeViewPage()
+  showFormViewPage()
+}
+
+function hideHomeViewPage(){
+  homeViewPage.classList.add("hidden")
+}
+
+function showFormViewPage(){
+  formViewPage.classList.remove("hidden")
+}
