@@ -11,7 +11,7 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-
+window.addEventListener("load", randomizePoster);
 
 // Create your event handlers and other functions here 👇
 function randomizePoster(){
