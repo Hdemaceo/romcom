@@ -4,8 +4,9 @@ var title = document.querySelector(".cover-title");
 var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
 
+var homeButton = document.querySelector(".home-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
-
+var saveCoverButton = document.querySelector(".save-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
 
 var formViewPage = document.querySelector(".form-view");
