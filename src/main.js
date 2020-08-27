@@ -40,6 +40,9 @@ function randomizePoster() {
 function formViewPageHandler() {
   hideHomeViewPage()
   showFormViewPage()
+  hideRandomCoverButton()
+  hideSaveCoverButton()
+  showHomeButton()
 }
 
 function hideHomeViewPage() {
