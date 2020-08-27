@@ -16,13 +16,13 @@
 ## Overview & Learning Goals ::
 For our Mod 1 group project, RomCom, we've been given a repository as well as a basic HTML layout to work on. The intended goal is to create an application with operational functionality according to the rubric and provided composition.
 
-Our learning goals are to understand more about ______, familiarize ourselves with __________, become familiar with HTML and CSS, and get better exposure to the GitHub collaborative workflow.
+Our learning goals are to understand and be able to apply the functional concepts of this project. Additionally, we want to become familiar with how HTML and CSS interacts with JavaScript. Lastly, we want to practice and improve upon our GitHub collaborative workflow.
 
 
-## Progression
-8/25: Completed DTR, made GitHub repository, and independent familiarization with rubric.
+## Progression ::
+8/25: Completed DTR, made GitHub repository, and familiarized ourselves with the given rubric.
 
-8/26:
+8/26: Mapped out the index.html file so as to better acquiant ourselves with the given elements and classes with respect to their positions and how they appear on the web browser. We then walked through the code that was provided to us in the main.js and data.js files. Afterwards, we began creating variables in main.js that target the relevant DOM elements for interation 0 and 1. Next we created a function called "randomizePoster" which would utilize our query selector variables and the provided getRandomIndex function in generating random cover, titles, and descriptors. Once this was complete, we added an event listener that will invoke the randomizePoster function whenever the main page loads, thus completing iteration 0. Moving on to iteration 1, we created a variable that targets the "Show New Random Cover" button. With this variable, we added an event listener to it that will invoke the randomizePoster function whenever the button is clicked.
 
 8/27:
 
@@ -51,4 +51,4 @@ Our learning goals are to understand more about ______, familiarize ourselves wi
   <img width="200" height="auto" src=" " alt=" ">
 </p>
 
-Project spec & rubric can be found [here](https://https://github.com/turingschool-examples/romcom/).
+Project spec & rubric can be found [here](https://github.com/turingschool-examples/romcom/).
