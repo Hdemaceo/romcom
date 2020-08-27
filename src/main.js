@@ -57,3 +57,7 @@ function hideRandomCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
+
+function showHomeButton() {
+  homeButton.classList.remove("hidden")
+}
