@@ -53,3 +53,7 @@ function showFormViewPage() {
 function hideRandomCoverButton() {
   randomCoverButton.classList.add("hidden")
 }
+
+function hideSaveCoverButton() {
+  saveCoverButton.classList.add("hidden")
+}
