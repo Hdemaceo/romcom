@@ -6,8 +6,8 @@ var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
-
-
+var formViewPage = document.querySelector(".form-view");
+var homeViewPage = document.querySelector(".home-view");
 
 
 
