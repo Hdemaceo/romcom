@@ -28,7 +28,7 @@ var currentCover;
 
 window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
-
+makeNewCoverButton.addEventListener("click", showFormViewPageHandler);
 
 
 
