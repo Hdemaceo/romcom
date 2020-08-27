@@ -14,7 +14,12 @@ var currentCover;
 
 
 // Create your event handlers and other functions here 👇
-
+function randomizePoster(){
+  cover.src = covers[getRandomIndex(covers)],
+  title.innerText = titles[getRandomIndex(titles)],
+  firstTagline.innerText = descriptors[getRandomIndex(descriptors)],
+  secondTagline.innerText = descriptors[getRandomIndex(descriptors)]
+}
 
 // We've provided one function to get you started
 function getRandomIndex(array) {
