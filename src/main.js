@@ -49,3 +49,7 @@ function hideHomeViewPage() {
 function showFormViewPage() {
   formViewPage.classList.remove("hidden")
 }
+
+function hideRandomCoverButton() {
+  randomCoverButton.classList.add("hidden")
+}
