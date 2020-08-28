@@ -8,9 +8,11 @@ var homeButton = document.querySelector(".home-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
+var savedCoversButton = document.querySelector(".view-saved-button");
 
 var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
+var savedCoversViewPage = document.querySelector(".saved-view");
 
 // We've provided a few variables below 👇
 var savedCovers = [
@@ -23,7 +25,7 @@ var currentCover;
 window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
-
+savedCoversButton.addEventListener("click", savedCoversViewHandler);
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -45,12 +47,20 @@ function formViewPageHandler() {
   showHomeButton()
 }
 
+function savedCoversViewHandler() {
+  showSavedCoversViewPage()
+}
+
 function hideHomeViewPage() {
   homeViewPage.classList.add("hidden")
 }
 
 function showFormViewPage() {
   formViewPage.classList.remove("hidden")
+}
+
+function showSavedCoversViewPage() {
+  savedCoversViewPage.classList.remove("hidden")
 }
 
 function hideRandomCoverButton() {
