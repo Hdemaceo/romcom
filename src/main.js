@@ -70,9 +70,10 @@ function hideHomeViewPage() {
   homeViewPage.classList.add("hidden")
 }
 
-// function toggleHomeViewPage(){
-// homeViewPage.classList.toggle("hidden")
-// }
+//check toggle outcome for homeViewPage
+function toggleHomeViewPage(){
+  homeViewPage.classList.toggle("hidden")
+}
 
 function showFormViewPage() {
   formViewPage.classList.remove("hidden")
