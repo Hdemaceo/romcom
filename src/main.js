@@ -26,6 +26,7 @@ window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 savedCoversButton.addEventListener("click", savedCoversViewHandler);
+homeButton.addEventListener("click", homeViewPageHandler);
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -39,6 +40,11 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
+function homeViewPageHandler(){
+  showHomeViewPage()
+  hideFormViewPage()
+}
+
 function formViewPageHandler() {
   hideHomeViewPage()
   showFormViewPage()
@@ -48,15 +54,32 @@ function formViewPageHandler() {
 }
 
 function savedCoversViewHandler() {
+  hideHomeViewPage()
   showSavedCoversViewPage()
+  hideRandomCoverButton()
+  hideSaveCoverButton()
+  showHomeButton()
+}
+
+//should we refactor to toggle?
+function showHomeViewPage(){
+  homeViewPage.classList.remove("hidden")
 }
 
 function hideHomeViewPage() {
   homeViewPage.classList.add("hidden")
 }
 
+// function toggleHomeViewPage(){
+// homeViewPage.classList.toggle("hidden")
+// }
+
 function showFormViewPage() {
   formViewPage.classList.remove("hidden")
+}
+
+function hideFormViewPage() {
+  formViewPage.classList.add("remove")
 }
 
 function showSavedCoversViewPage() {
