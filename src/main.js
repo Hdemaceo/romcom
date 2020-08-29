@@ -43,6 +43,12 @@ function randomizePoster() {
 function homeViewPageHandler(){
   showHomeViewPage()
   hideFormViewPage()
+  //hide home button:
+  toggleHomeButton()
+  //show new random cover button:
+  showRandomCoverButton()
+  //show save cover button:
+  toggleSaveCoverButton()
 }
 
 function formViewPageHandler() {
@@ -91,10 +97,21 @@ function hideRandomCoverButton() {
   randomCoverButton.classList.add("hidden")
 }
 
+function showRandomCoverButton() {
+  randomCoverButton.classList
+}
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
 
+function toggleSaveCoverButton() {
+  toggleCoverButton.classList.toggle("visible")
+}
+
 function showHomeButton() {
   homeButton.classList.remove("hidden")
+}
+
+function toggleHomeButton() {
+  homeButton.classList.toggle("hidden")
 }
