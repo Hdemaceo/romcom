@@ -8,9 +8,11 @@ var homeButton = document.querySelector(".home-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
+var savedCoversButton = document.querySelector(".view-saved-button");
 
 var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
+var savedCoversViewPage = document.querySelector(".saved-view");
 
 // We've provided a few variables below 👇
 var savedCovers = [
@@ -23,7 +25,8 @@ var currentCover;
 window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
-
+savedCoversButton.addEventListener("click", savedCoversViewHandler);
+homeButton.addEventListener("click", homeViewPageHandler);
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -37,6 +40,17 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
+function homeViewPageHandler(){
+  showHomeViewPage()
+  hideFormViewPage()
+  //hide home button:
+  toggleHomeButton()
+  //show new random cover button:
+  showRandomCoverButton()
+  //show save cover button:
+  toggleSaveCoverButton()
+}
+
 function formViewPageHandler() {
   hideHomeViewPage()
   showFormViewPage()
@@ -45,22 +59,59 @@ function formViewPageHandler() {
   showHomeButton()
 }
 
+function savedCoversViewHandler() {
+  hideHomeViewPage()
+  showSavedCoversViewPage()
+  hideRandomCoverButton()
+  hideSaveCoverButton()
+  showHomeButton()
+}
+
+//should we refactor to toggle?
+function showHomeViewPage(){
+  homeViewPage.classList.remove("hidden")
+}
+
 function hideHomeViewPage() {
   homeViewPage.classList.add("hidden")
+}
+
+//check toggle outcome for homeViewPage
+function toggleHomeViewPage(){
+  homeViewPage.classList.toggle("hidden")
 }
 
 function showFormViewPage() {
   formViewPage.classList.remove("hidden")
 }
 
+function hideFormViewPage() {
+  formViewPage.classList.add("remove")
+}
+
+function showSavedCoversViewPage() {
+  savedCoversViewPage.classList.remove("hidden")
+}
+
 function hideRandomCoverButton() {
   randomCoverButton.classList.add("hidden")
 }
 
+function showRandomCoverButton() {
+  randomCoverButton.classList
+}
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
 
+function toggleSaveCoverButton() {
+  toggleCoverButton.classList.toggle("visible")
+}
+
 function showHomeButton() {
   homeButton.classList.remove("hidden")
+}
+
+function toggleHomeButton() {
+  homeButton.classList.toggle("hidden")
 }
