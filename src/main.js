@@ -40,6 +40,7 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
+//EVENT HANDLERS:
 function homeViewPageHandler(){
   hideHomeButton();
   hideFormViewPage();
@@ -66,54 +67,60 @@ function viewSavedCoversHandler() {
   hideSaveCoverButton();
   showViewSavedCoversPage();
   showHomeButton();
-
 }
 
-//should we refactor to toggle?
-function showHomeViewPage(){
-  homeViewPage.classList.remove("hidden")
-}
-
-function hideHomeViewPage() {
-  homeViewPage.classList.add("hidden")
-}
-
-//check toggle outcome for homeViewPage
-function toggleHomeViewPage(){
-  homeViewPage.classList.toggle("hidden")
-}
-
-function showFormViewPage() {
-  formViewPage.classList.remove("hidden")
-}
-
-function hideFormViewPage() {
-  formViewPage.classList.add("remove")
-}
-
-function showSavedCoversViewPage() {
-  savedCoversViewPage.classList.remove("hidden")
-}
-
-function hideRandomCoverButton() {
-  randomCoverButton.classList.add("hidden")
-}
-
-function showRandomCoverButton() {
-  randomCoverButton.classList
-}
-function hideSaveCoverButton() {
-  saveCoverButton.classList.add("hidden")
-}
-
-function toggleSaveCoverButton() {
-  toggleCoverButton.classList.toggle("visible")
-}
+//FUNCTIONS FOR BUTTONS AND PAGES
 
 function showHomeButton() {
   homeButton.classList.remove("hidden")
 }
-
-function toggleHomeButton() {
-  homeButton.classList.toggle("hidden")
+function hideHomeButton() {
+  homeButton.classList.add("hidden")
 }
+//function showHomeViewPage(){
+//   homeViewPage.classList.remove("hidden")
+// }
+//
+// function hideHomeViewPage() {
+//   homeViewPage.classList.add("hidden")
+// }
+//
+// //check toggle outcome for homeViewPage
+// function toggleHomeViewPage(){
+//   homeViewPage.classList.toggle("hidden")
+// }
+//
+// function showFormViewPage() {
+//   formViewPage.classList.remove("hidden")
+// }
+//
+// function hideFormViewPage() {
+//   formViewPage.classList.add("remove")
+// }
+//
+// function showSavedCoversViewPage() {
+//   savedCoversViewPage.classList.remove("hidden")
+// }
+//
+// function hideRandomCoverButton() {
+//   randomCoverButton.classList.add("hidden")
+// }
+//
+// function showRandomCoverButton() {
+//   randomCoverButton.classList
+// }
+// function hideSaveCoverButton() {
+//   saveCoverButton.classList.add("hidden")
+// }
+//
+// function toggleSaveCoverButton() {
+//   toggleCoverButton.classList.toggle("visible")
+// }
+//
+// function showHomeButton() {
+//   homeButton.classList.remove("hidden")
+// }
+//
+// function toggleHomeButton() {
+//   homeButton.classList.toggle("hidden")
+// }
