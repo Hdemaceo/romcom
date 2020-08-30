@@ -89,26 +89,25 @@ function showSaveCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
-
-//function showHomeViewPage(){
-//   homeViewPage.classList.remove("hidden")
+// function showViewSavedCoversButton() {
+//   viewSavedCoversButton.classList.remove("hidden")
 // }
-//
-// function hideHomeViewPage() {
-//   homeViewPage.classList.add("hidden")
-// }
+function showHomeViewPage() {
+  homeViewPage.classList.remove("hidden")
+}
+function hideHomeViewPage() {
+  homeViewPage.classList.add("hidden")
+}
+function showFormViewPage() {
+  formViewPage.classList.remove("hidden")
+}
+function hideFormViewPage() {
+  formViewPage.classList.add("hidden")
+}
 //
 // //check toggle outcome for homeViewPage
 // function toggleHomeViewPage(){
 //   homeViewPage.classList.toggle("hidden")
-// }
-//
-// function showFormViewPage() {
-//   formViewPage.classList.remove("hidden")
-// }
-//
-// function hideFormViewPage() {
-//   formViewPage.classList.add("remove")
 // }
 //
 // function showSavedCoversViewPage() {
@@ -116,11 +115,3 @@ function hideSaveCoverButton() {
 // }
 //
 // }
-// function hideSaveCoverButton() {
-//   saveCoverButton.classList.add("hidden")
-// }
-//
-// function toggleSaveCoverButton() {
-//   toggleCoverButton.classList.toggle("visible")
-// }
-//
