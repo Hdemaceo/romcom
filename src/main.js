@@ -3,10 +3,10 @@ var cover = document.querySelector(".cover-image");
 var title = document.querySelector(".cover-title");
 var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
-var userCover = document.querySelector("#cover");
-var userTitle = document.querySelector("#title");
-var userDescriptorOne = document.querySelector("#descriptor1");
-var userDescriptorTwo = document.querySelector("#descriptor2");
+var userCover = document.querySelector(".user-cover");
+var userTitle = document.querySelector(".user-title");
+var userDescriptorOne = document.querySelector(".user-desc1");
+var userDescriptorTwo = document.querySelector(".user-desc2");
 
 var homeButton = document.querySelector(".home-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -46,28 +46,12 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 function saveUserInput(){
-  cover.src = userCover.value;
-  title.innerText = userTitle.value;
-  firstDescriptor.innerText = userDescriptorOne.value;
-  secondDescriptor.innerText = userDescriptorTwo.value;
-// Array protoype methods:
-// pop();  -- removes the LAST element from an array
-// push(); -- adds one or more elements to the END of an array
-// shift(); removes the FIRST element from an arrays
-// unshift(); adds one or more elements to the BEGINNING of an array
-
-  // save the users input into respective arrays
-  // at either first or last index (push or unshift)
-
+  covers.unshift(userCover.value);
+  titles.unshift(userTitle.value);
+  descriptors.unshift(userDescriptorOne.value);
+  descriptors.unshift(userDescriptorTwo.value);
 }
 function createNewBook(){
-  saveUserInput();
-  homeViewPageHandler();
-  // covers.push(userCover.value);
-  // titles.push(userTitle.value);
-  // descriptors.push(userDescriptorOne.value);
-  // descriptors.push(userDescriptorTwo.value);
-  // saveUserInput()
 }
 
 //EVENT HANDLERS:
