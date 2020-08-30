@@ -42,6 +42,9 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
+function createNewBook(){
+  
+}
 
 //EVENT HANDLERS:
 function homeViewPageHandler(){
