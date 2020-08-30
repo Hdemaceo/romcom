@@ -51,19 +51,22 @@ function homeViewPageHandler(){
 }
 
 function formViewPageHandler() {
-  hideHomeViewPage()
-  showFormViewPage()
-  hideRandomCoverButton()
-  hideSaveCoverButton()
-  showHomeButton()
+  hideHomeViewPage();
+  hideRandomCoverButton();
+  hideSaveCoverButton();
+  hideViewSavedCoversPage();
+  showFormViewPage();
+  showHomeButton();
 }
 
 function viewSavedCoversHandler() {
-  hideHomeViewPage()
-  showSavedCoversViewPage()
-  hideRandomCoverButton()
-  hideSaveCoverButton()
-  showHomeButton()
+  hideHomeViewPage();
+  hideFormViewPage();
+  hideRandomCoverButton();
+  hideSaveCoverButton();
+  showViewSavedCoversPage();
+  showHomeButton();
+
 }
 
 //should we refactor to toggle?
