@@ -77,6 +77,19 @@ function showHomeButton() {
 function hideHomeButton() {
   homeButton.classList.add("hidden")
 }
+function showRandomCoverButton() {
+  randomCoverButton.classList.remove("hidden")
+}
+function hideRandomCoverButton() {
+  randomCoverButton.classList.add("hidden")
+}
+function showSaveCoverButton() {
+  saveCoverButton.classList.remove("hidden")
+}
+function hideSaveCoverButton() {
+  saveCoverButton.classList.add("hidden")
+}
+
 //function showHomeViewPage(){
 //   homeViewPage.classList.remove("hidden")
 // }
@@ -102,12 +115,6 @@ function hideHomeButton() {
 //   savedCoversViewPage.classList.remove("hidden")
 // }
 //
-// function hideRandomCoverButton() {
-//   randomCoverButton.classList.add("hidden")
-// }
-//
-// function showRandomCoverButton() {
-//   randomCoverButton.classList
 // }
 // function hideSaveCoverButton() {
 //   saveCoverButton.classList.add("hidden")
@@ -117,10 +124,3 @@ function hideHomeButton() {
 //   toggleCoverButton.classList.toggle("visible")
 // }
 //
-// function showHomeButton() {
-//   homeButton.classList.remove("hidden")
-// }
-//
-// function toggleHomeButton() {
-//   homeButton.classList.toggle("hidden")
-// }
