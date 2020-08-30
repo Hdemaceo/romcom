@@ -104,14 +104,9 @@ function showFormViewPage() {
 function hideFormViewPage() {
   formViewPage.classList.add("hidden")
 }
-//
-// //check toggle outcome for homeViewPage
-// function toggleHomeViewPage(){
-//   homeViewPage.classList.toggle("hidden")
-// }
-//
-// function showSavedCoversViewPage() {
-//   savedCoversViewPage.classList.remove("hidden")
-// }
-//
-// }
+function showViewSavedCoversPage() {
+  viewSavedCoversPage.classList.remove("hidden")
+}
+function hideViewSavedCoversPage() {
+  viewSavedCoversPage.classList.add("hidden")
+}
