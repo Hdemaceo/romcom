@@ -28,6 +28,7 @@ randomCoverButton.addEventListener("click", randomizePoster);
 homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
+makeBookButton.addEventListener("click", createNewBook);
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
