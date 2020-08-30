@@ -5,8 +5,8 @@ var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
 var userCover = document.querySelector("#cover");
 var userTitle = document.querySelector("#title");
-var userDescriptor1 = document.querySelector("#descriptor1");
-var userDescriptor2 = document.querySelector("#descriptor2");
+var userDescriptorOne = document.querySelector("#descriptor1");
+var userDescriptorTwo = document.querySelector("#descriptor2");
 
 var homeButton = document.querySelector(".home-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -46,18 +46,27 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 function saveUserInput(){
-  // the IDs that each user input that we now have access to is referring to
-  // whatever value the user puts into them.
-  userCover
-  userTitle
-  userDescriptor1
-  userDescriptor2
+  cover.src = userCover.value;
+  title.innerText = userTitle.value;
+  firstDescriptor.innerText = userDescriptorOne.value;
+  secondDescriptor.innerText = userDescriptorTwo.value;
+// Array protoype methods:
+// pop();  -- removes the LAST element from an array
+// push(); -- adds one or more elements to the END of an array
+// shift(); removes the FIRST element from an arrays
+// unshift(); adds one or more elements to the BEGINNING of an array
+
   // save the users input into respective arrays
   // at either first or last index (push or unshift)
 
 }
 function createNewBook(){
-  // event.preventDefault();
+  saveUserInput();
+  homeViewPageHandler();
+  // covers.push(userCover.value);
+  // titles.push(userTitle.value);
+  // descriptors.push(userDescriptorOne.value);
+  // descriptors.push(userDescriptorTwo.value);
   // saveUserInput()
 }
 
