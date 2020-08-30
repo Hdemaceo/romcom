@@ -9,6 +9,7 @@ var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
 var viewSavedCoversButton = document.querySelector(".view-saved-button");
+var makeBookButton = document.querySelector(".create-new-book-button");
 
 var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
@@ -40,6 +41,7 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
+
 //EVENT HANDLERS:
 function homeViewPageHandler(){
   hideHomeButton();
@@ -47,7 +49,7 @@ function homeViewPageHandler(){
   hideViewSavedCoversPage();
   showRandomCoverButton();
   showSaveCoverButton();
-  showViewSavedCoversButton();
+  //showViewSavedCoversButton();
   showHomeViewPage();
 }
 
@@ -77,6 +79,7 @@ function showHomeButton() {
 function hideHomeButton() {
   homeButton.classList.add("hidden")
 }
+
 function showRandomCoverButton() {
   randomCoverButton.classList.remove("hidden")
 }
@@ -92,6 +95,7 @@ function hideSaveCoverButton() {
 // function showViewSavedCoversButton() {
 //   viewSavedCoversButton.classList.remove("hidden")
 // }
+
 function showHomeViewPage() {
   homeViewPage.classList.remove("hidden")
 }
