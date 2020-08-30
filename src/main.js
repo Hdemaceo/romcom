@@ -52,6 +52,13 @@ function saveUserInput(){
   descriptors.unshift(userDescriptorTwo.value);
 }
 function createNewBook(){
+  event.preventDefault();
+  saveUserInput();
+  cover.src = covers[0];
+  title.innerText = titles[0];
+  firstDescriptor.innerText = descriptors[1];
+  secondDescriptor.innerText = descriptors[0];
+  homeViewPageHandler();
 }
 
 //EVENT HANDLERS:
