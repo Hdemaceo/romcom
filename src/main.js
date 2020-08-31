@@ -32,7 +32,7 @@ randomCoverButton.addEventListener("click", randomizePoster);
 homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
-makeBookButton.addEventListener("click", createNewBook);
+makeBookButton.addEventListener("click", customCoverHandler);
 
 
 //FUNCTIONS:
@@ -41,17 +41,36 @@ function getRandomIndex(array) {
 }
 
 function randomizePoster() {
-  cover.src = covers[getRandomIndex(covers)];
-  title.innerText = titles[getRandomIndex(titles)];
-  firstDescriptor.innerText = descriptors[getRandomIndex(descriptors)];
-  secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
+  currentCover = new Cover(
+    covers[getRandomIndex(covers)],
+    titles[getRandomIndex(titles)],
+    descriptors[getRandomIndex(descriptors)],
+    descriptors[getRandomIndex(descriptors)]
+  );
+  cover.src = currentCover.cover;
+  title.innerText = currentCover.title;
+  firstDescriptor.innerText = currentCover.tagline1;
+  secondDescriptor.innerText = currentCover.tagline2;
 }
 
-function saveUserInput() {
-  covers.unshift(userCover.value);
-  titles.unshift(userTitle.value);
-  descriptors.unshift(userDescriptorOne.value);
-  descriptors.unshift(userDescriptorTwo.value);
+function createCustomCover() {
+  currentCover = new Cover(
+    userCover.value,
+    userTitle.value,
+    userDescriptorOne.value,
+    userDescriptorTwo.value
+  );
+  // covers.unshift(userCover.value);
+  // titles.unshift(userTitle.value);
+  // descriptors.unshift(userDescriptorOne.value);
+  // descriptors.unshift(userDescriptorTwo.value);
+}
+
+function displayCustomCover() {
+  cover.src = currentCover.cover;
+  title.innerText = currentCover.title;
+  firstDescriptor.innerText = currentCover.tagline1;
+  secondDescriptor.innerText = currentCover.tagline2;
 }
 
 function clearUserInput() {
@@ -61,17 +80,15 @@ function clearUserInput() {
   userDescriptorTwo.value = "";
 }
 
-function createNewBook() {
+function customCoverHandler() {
   event.preventDefault();
-  saveUserInput();
+  createCustomCover();
+  displayCustomCover();
+  homeViewPageHandler();
   clearUserInput();
-  cover.src = covers[0];
-  title.innerText = titles[0];
-  firstDescriptor.innerText = descriptors[1];
-  secondDescriptor.innerText = descriptors[0];
-  homeViewPageHandler()
 }
 // should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
+// rename handler functions
 
 //EVENT HANDLERS:
 function homeViewPageHandler() {
@@ -103,38 +120,38 @@ function viewSavedCoversHandler() {
 
 //FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
 function showHomeButton() {
-  homeButton.classList.remove("hidden")
+  homeButton.classList.remove("hidden");
 }
 function hideHomeButton() {
-  homeButton.classList.add("hidden")
+  homeButton.classList.add("hidden");
 }
 function showRandomCoverButton() {
-  randomCoverButton.classList.remove("hidden")
+  randomCoverButton.classList.remove("hidden");
 }
 function hideRandomCoverButton() {
-  randomCoverButton.classList.add("hidden")
+  randomCoverButton.classList.add("hidden");
 }
 function showSaveCoverButton() {
-  saveCoverButton.classList.remove("hidden")
+  saveCoverButton.classList.remove("hidden");
 }
 function hideSaveCoverButton() {
-  saveCoverButton.classList.add("hidden")
+  saveCoverButton.classList.add("hidden");
 }
 function showHomeViewPage() {
-  homeViewPage.classList.remove("hidden")
+  homeViewPage.classList.remove("hidden");
 }
 function hideHomeViewPage() {
-  homeViewPage.classList.add("hidden")
+  homeViewPage.classList.add("hidden");
 }
 function showFormViewPage() {
-  formViewPage.classList.remove("hidden")
+  formViewPage.classList.remove("hidden");
 }
 function hideFormViewPage() {
-  formViewPage.classList.add("hidden")
+  formViewPage.classList.add("hidden");
 }
 function showViewSavedCoversPage() {
-  viewSavedCoversPage.classList.remove("hidden")
+  viewSavedCoversPage.classList.remove("hidden");
 }
 function hideViewSavedCoversPage() {
-  viewSavedCoversPage.classList.add("hidden")
+  viewSavedCoversPage.classList.add("hidden");
 }
