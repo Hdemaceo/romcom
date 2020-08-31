@@ -45,20 +45,31 @@ function randomizePoster() {
   firstDescriptor.innerText = descriptors[getRandomIndex(descriptors)];
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
+
 function saveUserInput(){
   covers.unshift(userCover.value);
   titles.unshift(userTitle.value);
   descriptors.unshift(userDescriptorOne.value);
   descriptors.unshift(userDescriptorTwo.value);
 }
+
+function clearUserInput(){
+  userCover.value = "";
+  userTitle.value = "";
+  userDescriptorOne.value = "";
+  userDescriptorTwo.value = "";
+}
+
+// should "createNewBook" be renamed as a handler?
 function createNewBook(){
   event.preventDefault();
   saveUserInput();
+  clearUserInput();
   cover.src = covers[0];
   title.innerText = titles[0];
   firstDescriptor.innerText = descriptors[1];
   secondDescriptor.innerText = descriptors[0];
-  homeViewPageHandler();
+  homeViewPageHandler()
 }
 
 //EVENT HANDLERS:
