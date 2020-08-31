@@ -68,7 +68,6 @@ function homeViewPageHandler(){
   hideViewSavedCoversPage();
   showRandomCoverButton();
   showSaveCoverButton();
-  //showViewSavedCoversButton();
   showHomeViewPage();
 }
 
@@ -111,9 +110,6 @@ function showSaveCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
-// function showViewSavedCoversButton() {
-//   viewSavedCoversButton.classList.remove("hidden")
-// }
 
 function showHomeViewPage() {
   homeViewPage.classList.remove("hidden")
