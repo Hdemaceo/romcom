@@ -1,8 +1,9 @@
-// Create variables targetting the relevant DOM elements here 👇
+// VARIABLES AND QUERY SELECTORS:
 var cover = document.querySelector(".cover-image");
 var title = document.querySelector(".cover-title");
 var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
+
 var userCover = document.querySelector(".user-cover");
 var userTitle = document.querySelector(".user-title");
 var userDescriptorOne = document.querySelector(".user-desc1");
@@ -19,14 +20,13 @@ var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
 
-// We've provided a few variables below 👇
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover;
 
 
-// Add your event listeners here 👇
+//EVENT LISTENERS:
 window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
 homeButton.addEventListener("click", homeViewPageHandler);
@@ -34,7 +34,8 @@ makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
 makeBookButton.addEventListener("click", createNewBook);
 
-// Create your event handlers and other functions here 👇
+
+//FUNCTIONS:
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
@@ -46,22 +47,21 @@ function randomizePoster() {
   secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
-function saveUserInput(){
+function saveUserInput() {
   covers.unshift(userCover.value);
   titles.unshift(userTitle.value);
   descriptors.unshift(userDescriptorOne.value);
   descriptors.unshift(userDescriptorTwo.value);
 }
 
-function clearUserInput(){
+function clearUserInput() {
   userCover.value = "";
   userTitle.value = "";
   userDescriptorOne.value = "";
   userDescriptorTwo.value = "";
 }
 
-// should "createNewBook" be renamed as a handler?
-function createNewBook(){
+function createNewBook() {
   event.preventDefault();
   saveUserInput();
   clearUserInput();
@@ -71,9 +71,10 @@ function createNewBook(){
   secondDescriptor.innerText = descriptors[0];
   homeViewPageHandler()
 }
+// should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
 
 //EVENT HANDLERS:
-function homeViewPageHandler(){
+function homeViewPageHandler() {
   hideHomeButton();
   hideFormViewPage();
   hideViewSavedCoversPage();
@@ -100,15 +101,13 @@ function viewSavedCoversHandler() {
   showHomeButton();
 }
 
-//FUNCTIONS FOR BUTTONS AND PAGES
-
+//FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
 function showHomeButton() {
   homeButton.classList.remove("hidden")
 }
 function hideHomeButton() {
   homeButton.classList.add("hidden")
 }
-
 function showRandomCoverButton() {
   randomCoverButton.classList.remove("hidden")
 }
@@ -121,7 +120,6 @@ function showSaveCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden")
 }
-
 function showHomeViewPage() {
   homeViewPage.classList.remove("hidden")
 }
