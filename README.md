@@ -30,9 +30,9 @@ Our learning goals are to understand and be able to apply the functional concept
 
 8/29:
 
-8/30:
+8/30: 
 
-8/31:
+8/31: Refactor code that is mainly pertaining to Iteration 3 so that the data model is utilized to store user input first to then update the DOM.
 
 9/1: Project due at ________.
 
