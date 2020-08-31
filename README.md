@@ -26,15 +26,15 @@ Our learning goals are to understand and be able to apply the functional concept
 
 8/27: Began working on Iteration 2 of the project. The main focus of Iteration 2 is to be able to switch from the "Home" page to the "Form" page. Here, we discussed the usage of event handlers for when the "Make Your Own Cover" button is clicked. We created an event handler for the "Form" page as well as the "Home" page. Each event handler runs through a series of functions specific to the individual event performed. These functions include removing/adding the .hidden class from certain forms and buttons, as outlined in the rubric.
 
-8/28:
+8/28: 
 
 8/29:
 
-8/30: 
+8/30:
 
 8/31: Refactor code that is mainly pertaining to Iteration 3 so that the data model is utilized to store user input first to then update the DOM.
 
-9/1: Project due at ________.
+9/1: Project due at 9pm.
 
 
 ## Showcase ::
