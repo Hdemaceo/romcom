@@ -1,8 +1,9 @@
-// Create variables targetting the relevant DOM elements here 👇
+// VARIABLES AND QUERY SELECTORS:
 var cover = document.querySelector(".cover-image");
 var title = document.querySelector(".cover-title");
 var firstDescriptor = document.querySelector(".tagline-1");
 var secondDescriptor = document.querySelector(".tagline-2");
+
 var userCover = document.querySelector(".user-cover");
 var userTitle = document.querySelector(".user-title");
 var userDescriptorOne = document.querySelector(".user-desc1");
@@ -19,56 +20,83 @@ var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
 
-// We've provided a few variables below 👇
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover;
 
 
-// Add your event listeners here 👇
+//EVENT LISTENERS:
 window.addEventListener("load", randomizePoster);
 randomCoverButton.addEventListener("click", randomizePoster);
 homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
-makeBookButton.addEventListener("click", createNewBook);
+makeBookButton.addEventListener("click", customCoverHandler);
 
-// Create your event handlers and other functions here 👇
+
+//FUNCTIONS:
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
 function randomizePoster() {
-  cover.src = covers[getRandomIndex(covers)];
-  title.innerText = titles[getRandomIndex(titles)];
-  firstDescriptor.innerText = descriptors[getRandomIndex(descriptors)];
-  secondDescriptor.innerText = descriptors[getRandomIndex(descriptors)]
-}
-function saveUserInput(){
-  covers.unshift(userCover.value);
-  titles.unshift(userTitle.value);
-  descriptors.unshift(userDescriptorOne.value);
-  descriptors.unshift(userDescriptorTwo.value);
-}
-function createNewBook(){
-  event.preventDefault();
-  saveUserInput();
-  cover.src = covers[0];
-  title.innerText = titles[0];
-  firstDescriptor.innerText = descriptors[1];
-  secondDescriptor.innerText = descriptors[0];
-  homeViewPageHandler();
+  currentCover = new Cover(
+    covers[getRandomIndex(covers)],
+    titles[getRandomIndex(titles)],
+    descriptors[getRandomIndex(descriptors)],
+    descriptors[getRandomIndex(descriptors)]
+  );
+  cover.src = currentCover.cover;
+  title.innerText = currentCover.title;
+  firstDescriptor.innerText = currentCover.tagline1;
+  secondDescriptor.innerText = currentCover.tagline2;
 }
 
+function createCustomCover() {
+  currentCover = new Cover(
+    userCover.value,
+    userTitle.value,
+    userDescriptorOne.value,
+    userDescriptorTwo.value
+  );
+  // covers.unshift(userCover.value);
+  // titles.unshift(userTitle.value);
+  // descriptors.unshift(userDescriptorOne.value);
+  // descriptors.unshift(userDescriptorTwo.value);
+}
+
+function displayCustomCover() {
+  cover.src = currentCover.cover;
+  title.innerText = currentCover.title;
+  firstDescriptor.innerText = currentCover.tagline1;
+  secondDescriptor.innerText = currentCover.tagline2;
+}
+
+function clearUserInput() {
+  userCover.value = "";
+  userTitle.value = "";
+  userDescriptorOne.value = "";
+  userDescriptorTwo.value = "";
+}
+
+function customCoverHandler() {
+  event.preventDefault();
+  createCustomCover();
+  displayCustomCover();
+  homeViewPageHandler();
+  clearUserInput();
+}
+// should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
+// rename handler functions
+
 //EVENT HANDLERS:
-function homeViewPageHandler(){
+function homeViewPageHandler() {
   hideHomeButton();
   hideFormViewPage();
   hideViewSavedCoversPage();
   showRandomCoverButton();
   showSaveCoverButton();
-  //showViewSavedCoversButton();
   showHomeViewPage();
 }
 
@@ -90,46 +118,40 @@ function viewSavedCoversHandler() {
   showHomeButton();
 }
 
-//FUNCTIONS FOR BUTTONS AND PAGES
-
+//FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
 function showHomeButton() {
-  homeButton.classList.remove("hidden")
+  homeButton.classList.remove("hidden");
 }
 function hideHomeButton() {
-  homeButton.classList.add("hidden")
+  homeButton.classList.add("hidden");
 }
-
 function showRandomCoverButton() {
-  randomCoverButton.classList.remove("hidden")
+  randomCoverButton.classList.remove("hidden");
 }
 function hideRandomCoverButton() {
-  randomCoverButton.classList.add("hidden")
+  randomCoverButton.classList.add("hidden");
 }
 function showSaveCoverButton() {
-  saveCoverButton.classList.remove("hidden")
+  saveCoverButton.classList.remove("hidden");
 }
 function hideSaveCoverButton() {
-  saveCoverButton.classList.add("hidden")
+  saveCoverButton.classList.add("hidden");
 }
-// function showViewSavedCoversButton() {
-//   viewSavedCoversButton.classList.remove("hidden")
-// }
-
 function showHomeViewPage() {
-  homeViewPage.classList.remove("hidden")
+  homeViewPage.classList.remove("hidden");
 }
 function hideHomeViewPage() {
-  homeViewPage.classList.add("hidden")
+  homeViewPage.classList.add("hidden");
 }
 function showFormViewPage() {
-  formViewPage.classList.remove("hidden")
+  formViewPage.classList.remove("hidden");
 }
 function hideFormViewPage() {
-  formViewPage.classList.add("hidden")
+  formViewPage.classList.add("hidden");
 }
 function showViewSavedCoversPage() {
-  viewSavedCoversPage.classList.remove("hidden")
+  viewSavedCoversPage.classList.remove("hidden");
 }
 function hideViewSavedCoversPage() {
-  viewSavedCoversPage.classList.add("hidden")
+  viewSavedCoversPage.classList.add("hidden");
 }

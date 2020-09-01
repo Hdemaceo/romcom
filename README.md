@@ -24,17 +24,17 @@ Our learning goals are to understand and be able to apply the functional concept
 
 8/26: Mapped out the index.html file so as to better acquiant ourselves with the given elements and classes with respect to their positions and how they appear on the web browser. We then walked through the code that was provided to us in the main.js and data.js files. Afterwards, we began creating variables in main.js that target the relevant DOM elements for interation 0 and 1. Next we created a function called "randomizePoster" which would utilize our query selector variables and the provided getRandomIndex function in generating random cover, titles, and descriptors. Once this was complete, we added an event listener that will invoke the randomizePoster function whenever the main page loads, thus completing iteration 0. Moving on to iteration 1, we created a variable that targets the "Show New Random Cover" button. With this variable, we added an event listener to it that will invoke the randomizePoster function whenever the button is clicked.
 
-8/27:
+8/27: Began working on Iteration 2 of the project. The main focus of Iteration 2 is to be able to switch from the "Home" page to the "Form" page. Here, we discussed the usage of event handlers for when the "Make Your Own Cover" button is clicked. We created an event handler for the "Form" page as well as the "Home" page. Each event handler runs through a series of functions specific to the individual event performed. These functions include removing/adding the .hidden class from certain forms and buttons, as outlined in the rubric.
 
-8/28:
+8/28: 
 
 8/29:
 
 8/30:
 
-8/31:
+8/31: Refactor code that is mainly pertaining to Iteration 3 so that the data model is utilized to store user input first to then update the DOM.
 
-9/1: Project due at ________.
+9/1: Project due at 9pm.
 
 
 ## Showcase ::
