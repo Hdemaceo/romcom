@@ -20,7 +20,7 @@ var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
 var savedCoversSection = document.querySelector(".saved-covers-section");
-var miniCover = document.querySelectorAll(".mini-cover");
+var miniCover = document.querySelector(".mini-cover");
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -75,13 +75,10 @@ function noDuplicates() {
 // }
     if(savedCovers[i] === currentCover) {
       duplicates = true;
-      console.log("a")
     } else {
       duplicates = false;
-      console.log("b")
     }
     return duplicates;
-    console.log("c")
   }
 }
 
@@ -94,11 +91,10 @@ function noDuplicates() {
 
 function saveCover(){
   noDuplicates()
-  console.log("d")
   if(noDuplicates() === false){
     savedCovers.unshift(currentCover);
-    console.log("e")
   }
+  console.log(savedCovers);
 }
 //on one click, stays on page, saves cover to array
 //on two clicks, goes to Saved Covers Page
@@ -119,20 +115,19 @@ function saveCover(){
 //       </div>`);
 // }
 // }
-// function displaySavedCovers() {
-//    // savedCoversSection.innerText = "";
-// //iterate through array in for loop for each saved cover
-//    for (var i = 0; i < savedCovers.length; i++) {
-//      savedCoversSection.insertAdjacentHTML("afterend", `
-//      <div class = "mini-cover">
-//       <img class="cover-image" src=${savedCovers[i].cover}>
-//       <h2 class="cover-title">${savedCovers[i].title}</h2>
-//       <h3 class="tagline">A tale of
-//       <span class="tagline-1">${savedCovers[i].tagline1}</span> and
-//       <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-//     </div>`);
-//    }
-//  }
+function displaySavedCovers() {
+//iterate through array in for loop for each saved cover
+ for (var i = 0; i < savedCovers.length; i++) {
+   savedCoversSection.insertAdjacentHTML("afterbegin", `
+   <div class = "mini-cover">
+    <img class="cover-image" src=${savedCovers[i].cover}>
+    <h2 class="cover-title">${savedCovers[i].title}</h2>
+    <h3 class="tagline">A tale of
+    <span class="tagline-1">${savedCovers[i].tagline1}</span> and
+    <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+  </div>`);
+ }
+}
 
 // should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
 // rename handler functions
@@ -158,15 +153,15 @@ function formViewPageHandler() {
 }
 
 function viewSavedCoversHandler() {
-  savedCoversSection.innerText = "";
-  console.log("clear saved covers section")
+  event.preventDefault();
+  savedCoversSection.innerHTML = "";
   hideHomeViewPage();
   hideFormViewPage();
   hideRandomCoverButton();
   hideSaveCoverButton();
   showViewSavedCoversPage();
   showHomeButton();
-  displayUniqueCovers();
+  displaySavedCovers();
 }
 
 function createCustomCover() {
