@@ -29,8 +29,8 @@ var currentCover;
 
 
 //EVENT LISTENERS:
-window.addEventListener("load", randomizePoster);
-randomCoverButton.addEventListener("click", randomizePoster);
+window.addEventListener("load", displayRandomPoster);
+randomCoverButton.addEventListener("click", displayRandomPoster);
 homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
@@ -50,6 +50,10 @@ function randomizePoster() {
     descriptors[getRandomIndex(descriptors)],
     descriptors[getRandomIndex(descriptors)]
   );
+}
+
+function displayRandomPoster(){
+  randomizePoster();
   cover.src = currentCover.cover;
   title.innerText = currentCover.title;
   firstDescriptor.innerText = currentCover.tagline1;
@@ -69,7 +73,7 @@ function hasDuplicates() {
 }
 
 function saveCover() {
-  if(hasDuplicates() === false){
+  if(hasDuplicates() === false) {
     savedCovers.unshift(currentCover);
   }
 }
@@ -87,8 +91,6 @@ function displaySavedCovers() {
  }
 }
 
-// should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
-// rename handler functions
 
 //EVENT HANDLERS:
 function homeViewPageHandler() {
