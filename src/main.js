@@ -33,6 +33,11 @@ homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
 makeBookButton.addEventListener("click", customCoverHandler);
+saveCoverButton.addEventListener("click", saveCover[once]);
+//click saveCoverButton twice directs to viewSavedCoversPage
+//"click"++ or removeEventListener()?
+//button.addEventListener('click', event => {
+//  button.innerHTML = `Click count: ${event.detail}`;
 
 
 //FUNCTIONS:
