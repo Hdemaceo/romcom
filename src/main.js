@@ -19,6 +19,7 @@ var makeBookButton = document.querySelector(".create-new-book-button");
 var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
+var miniCover = document.querySelector(".mini-cover");
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -33,7 +34,7 @@ homeButton.addEventListener("click", homeViewPageHandler);
 makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
 makeBookButton.addEventListener("click", customCoverHandler);
-saveCoverButton.addEventListener("click", saveCover[once]);
+saveCoverButton.addEventListener("click", saveCover);
 //click saveCoverButton twice directs to viewSavedCoversPage
 //"click"++ or removeEventListener()?
 //button.addEventListener('click', event => {
@@ -92,6 +93,27 @@ function customCoverHandler() {
   homeViewPageHandler();
   clearUserInput();
 }
+
+
+function saveCover() {
+  event.preventDefault();
+  savedCovers.push(currentCover);
+  viewSavedCoversPage.insertAdjacentHTML("afterend", miniCover);
+//on one click, stays on page, saves cover to array
+//on two clicks, goes to Saved Covers Page
+  //.filter to avoid duplicates
+  //on second click
+  //viewSavedCoversHandler();
+
+}
+
+function displaySavedCovers() {
+  //iterate through array in for loop
+  //cover.src = savedCovers.cover;
+  //title.innerText = savedCovers.title;
+  //firstDescriptor.innerText = savedCovers.tagline1;
+  //secondDescriptor.innerText = savedCovers.tagline2;
+}
 // should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
 // rename handler functions
 
@@ -102,6 +124,7 @@ function homeViewPageHandler() {
   hideViewSavedCoversPage();
   showRandomCoverButton();
   showSaveCoverButton();
+    //showViewSavedCoversButton();
   showHomeViewPage();
 }
 
@@ -121,6 +144,7 @@ function viewSavedCoversHandler() {
   hideSaveCoverButton();
   showViewSavedCoversPage();
   showHomeButton();
+  displaySavedCovers();
 }
 
 //FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
@@ -142,6 +166,9 @@ function showSaveCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden");
 }
+// function showViewSavedCoversButton() {
+//   viewSavedCoversButton.classList.remove("hidden")
+// }
 function showHomeViewPage() {
   homeViewPage.classList.remove("hidden");
 }
