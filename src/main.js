@@ -36,10 +36,6 @@ makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
 makeBookButton.addEventListener("click", customCoverHandler);
 saveCoverButton.addEventListener("click", saveCover);
-//click saveCoverButton twice directs to viewSavedCoversPage
-//"click"++ or removeEventListener()?
-//button.addEventListener('click', event => {
-//  button.innerHTML = `Click count: ${event.detail}`;
 
 
 //FUNCTIONS:
@@ -60,19 +56,9 @@ function randomizePoster() {
   secondDescriptor.innerText = currentCover.tagline2;
 }
 
-function noDuplicates() {
-  //IF the currentCover = item in savedCovers, then do not save
-  //ELSE
-
+function hasDuplicates() {
   var duplicates;
-   for (var i = 0; i < savedCovers.length; i++) {
-//      if(savedCovers.indexOf(currentCover) === -1) {
-//        return false;
-//      } else {
-//        savedCovers.unshift(currentCover);
-//      }
-//   }
-// }
+  for (var i = 0; i < savedCovers.length; i++) {
     if(savedCovers[i] === currentCover) {
       duplicates = true;
     } else {
@@ -82,50 +68,22 @@ function noDuplicates() {
   }
 }
 
-  // if(savedCovers.includes(currentCover)) {
-  //   return false;
-  // } else {
-  //   savedCovers.unshift(currentCover);
-  // }
-// }
-
-function saveCover(){
-  noDuplicates()
-  if(noDuplicates() === false){
+function saveCover() {
+  if(hasDuplicates() === false){
     savedCovers.unshift(currentCover);
   }
-  console.log(savedCovers);
 }
-//on one click, stays on page, saves cover to array
-//on two clicks, goes to Saved Covers Page
-  //.filter to avoid duplicates
-  //on second click
-  // viewSavedCoversHandler();
 
-// function displayUniqueCovers() {
-// var uniqueCovers = [...new Set(savedCovers)]
-// for (var i = 0; i < uniqueCovers.length; i++) {
-//   savedCoversSection.insertAdjacentHTML("afterend", `
-//        <div class = "mini-cover">
-//         <img class="cover-image" src=${uniqueCovers[i].cover}>
-//         <h2 class="cover-title">${uniqueCovers[i].title}</h2>
-//         <h3 class="tagline">A tale of
-//         <span class="tagline-1">${uniqueCovers[i].tagline1}</span> and
-//         <span class="tagline-2">${uniqueCovers[i].tagline2}</span></h3>
-//       </div>`);
-// }
-// }
 function displaySavedCovers() {
-//iterate through array in for loop for each saved cover
  for (var i = 0; i < savedCovers.length; i++) {
    savedCoversSection.insertAdjacentHTML("afterbegin", `
-   <div class = "mini-cover">
-    <img class="cover-image" src=${savedCovers[i].cover}>
-    <h2 class="cover-title">${savedCovers[i].title}</h2>
-    <h3 class="tagline">A tale of
-    <span class="tagline-1">${savedCovers[i].tagline1}</span> and
-    <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-  </div>`);
+    <div class = "mini-cover">
+      <img class="cover-image" src=${savedCovers[i].cover}>
+      <h2 class="cover-title">${savedCovers[i].title}</h2>
+      <h3 class="tagline">A tale of
+      <span class="tagline-1">${savedCovers[i].tagline1}</span> and
+      <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    </div>`);
  }
 }
 
@@ -139,7 +97,6 @@ function homeViewPageHandler() {
   hideViewSavedCoversPage();
   showRandomCoverButton();
   showSaveCoverButton();
-    //showViewSavedCoversButton();
   showHomeViewPage();
 }
 
@@ -195,6 +152,7 @@ function customCoverHandler() {
   clearUserInput();
 }
 
+
 //FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
 function showHomeButton() {
   homeButton.classList.remove("hidden");
@@ -214,9 +172,6 @@ function showSaveCoverButton() {
 function hideSaveCoverButton() {
   saveCoverButton.classList.add("hidden");
 }
-// function showViewSavedCoversButton() {
-//   viewSavedCoversButton.classList.remove("hidden")
-// }
 function showHomeViewPage() {
   homeViewPage.classList.remove("hidden");
 }
