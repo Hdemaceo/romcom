@@ -19,6 +19,7 @@ var makeBookButton = document.querySelector(".create-new-book-button");
 var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
+var savedCoversSection = document.querySelector(".saved-covers-section");
 var miniCover = document.querySelector(".mini-cover");
 
 var savedCovers = [
@@ -59,61 +60,28 @@ function randomizePoster() {
   secondDescriptor.innerText = currentCover.tagline2;
 }
 
-function createCustomCover() {
-  currentCover = new Cover(
-    userCover.value,
-    userTitle.value,
-    userDescriptorOne.value,
-    userDescriptorTwo.value
-  );
-  // covers.unshift(userCover.value);
-  // titles.unshift(userTitle.value);
-  // descriptors.unshift(userDescriptorOne.value);
-  // descriptors.unshift(userDescriptorTwo.value);
-}
-
-function displayCustomCover() {
-  cover.src = currentCover.cover;
-  title.innerText = currentCover.title;
-  firstDescriptor.innerText = currentCover.tagline1;
-  secondDescriptor.innerText = currentCover.tagline2;
-}
-
-function clearUserInput() {
-  userCover.value = "";
-  userTitle.value = "";
-  userDescriptorOne.value = "";
-  userDescriptorTwo.value = "";
-}
-
-function customCoverHandler() {
-  event.preventDefault();
-  createCustomCover();
-  displayCustomCover();
-  homeViewPageHandler();
-  clearUserInput();
-}
-
-
-function saveCover() {
-  event.preventDefault();
+function saveCover(){
+event.preventDefault();
   savedCovers.push(currentCover);
-  viewSavedCoversPage.insertAdjacentHTML("afterend", miniCover);
 //on one click, stays on page, saves cover to array
 //on two clicks, goes to Saved Covers Page
   //.filter to avoid duplicates
   //on second click
-  //viewSavedCoversHandler();
+  viewSavedCoversHandler();
 
 }
 
 function displaySavedCovers() {
-  //iterate through array in for loop
-  //cover.src = savedCovers.cover;
-  //title.innerText = savedCovers.title;
-  //firstDescriptor.innerText = savedCovers.tagline1;
-  //secondDescriptor.innerText = savedCovers.tagline2;
-}
+//   //iterate through array in for loop for each saved cover
+   for (var i = 0; i < savedCovers.length; i++) {
+     savedCoversSection.insertAdjacentHTML("afterend", `
+     <div class = "mini-cover">
+      <img class="cover-image" src=${savedCovers[i].cover}>
+      <h2 class="cover-title">${savedCovers[i].title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    </div>`);
+   }
+ }
 // should lines 68-71 be its own function and then "createNewBook" be renamed as a handler?
 // rename handler functions
 
@@ -145,6 +113,37 @@ function viewSavedCoversHandler() {
   showViewSavedCoversPage();
   showHomeButton();
   displaySavedCovers();
+}
+
+function createCustomCover() {
+  currentCover = new Cover(
+    userCover.value,
+    userTitle.value,
+    userDescriptorOne.value,
+    userDescriptorTwo.value
+  );
+}
+
+function displayCustomCover() {
+   cover.src = currentCover.cover;
+   title.innerText = currentCover.title;
+   firstDescriptor.innerText = currentCover.tagline1;
+   secondDescriptor.innerText = currentCover.tagline2;
+ }
+
+function clearUserInput() {
+  userCover.value = "";
+  userTitle.value = "";
+  userDescriptorOne.value = "";
+  userDescriptorTwo.value = "";
+}
+
+function customCoverHandler() {
+  event.preventDefault();
+  createCustomCover();
+  displayCustomCover();
+  homeViewPageHandler();
+  clearUserInput();
 }
 
 //FUNCTIONS TO HIDE/SHOW BUTTONS AND PAGES:
