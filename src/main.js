@@ -92,14 +92,14 @@ function noDuplicates() {
   // }
 // }
 
-// function saveCover(){
-//   noDuplicates()
-//   console.log("d")
-//   if(noDuplicates() === false){
-//     savedCovers.unshift(currentCover);
-//     console.log("e")
-//   }
-// }
+function saveCover(){
+  noDuplicates()
+  console.log("d")
+  if(noDuplicates() === false){
+    savedCovers.unshift(currentCover);
+    console.log("e")
+  }
+}
 //on one click, stays on page, saves cover to array
 //on two clicks, goes to Saved Covers Page
   //.filter to avoid duplicates
