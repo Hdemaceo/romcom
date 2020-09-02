@@ -36,16 +36,16 @@ Our learning goals are to understand and be able to apply the functional concept
 
 
 ## Showcase ::
-<p align="center"> Home Page View </br>
+<p align="left">Home Page View: <br>
   <img width="460" height="auto" src="./assets/homeview.jpg">
 </p>
-<p align="center"> Saved Cover Page View</br>
+<p align="left">Saved Cover Page View: <br>
   <img width="460" height="auto" src="./assets/savedcovers.jpg">
 </p>
-<p align="center"> Cover Form Page View </br>
+<p align="left">Cover Form Page View: <br>
   <img width="460" height="auto" src="./assets/formview.jpg">
 </p>
-<p align="center"> User Cover View</br>
+<p align="left">User Cover View: <br>
   <img width="460" height="auto" src="./assets/makecover.jpg">
 </p>
 
