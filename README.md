@@ -37,16 +37,16 @@ Our learning goals are to understand and be able to apply the functional concept
 
 ## Showcase ::
 <p align="left">Home Page View: <br>
-  <img width="460" height="auto" src="./assets/homeview.jpg">
+  <img width="500" height="auto" src="./assets/homeview.jpg">
 </p>
 <p align="left">Saved Cover Page View: <br>
-  <img width="460" height="auto" src="./assets/savedcovers.jpg">
+  <img width="500" height="300" src="./assets/savedcovers.jpg">
 </p>
 <p align="left">Cover Form Page View: <br>
-  <img width="460" height="auto" src="./assets/formview.jpg">
+  <img width="500" height="300" src="./assets/formview.jpg">
 </p>
 <p align="left">User Cover View: <br>
-  <img width="460" height="auto" src="./assets/makecover.jpg">
+  <img width="500" height="auto" src="./assets/makecover.jpg">
 </p>
 
 Project spec & rubric can be found [here](https://github.com/turingschool-examples/romcom/).
