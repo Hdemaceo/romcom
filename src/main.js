@@ -20,7 +20,6 @@ var formViewPage = document.querySelector(".form-view");
 var homeViewPage = document.querySelector(".home-view");
 var viewSavedCoversPage = document.querySelector(".saved-view");
 var savedCoversSection = document.querySelector(".saved-covers-section");
-var miniCover = document.querySelector(".mini-cover");
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -36,6 +35,7 @@ makeNewCoverButton.addEventListener("click", formViewPageHandler);
 viewSavedCoversButton.addEventListener("click", viewSavedCoversHandler);
 makeBookButton.addEventListener("click", customCoverHandler);
 saveCoverButton.addEventListener("click", saveCover);
+// savedCoversSection.addEventListener("dblclick", deleteCover);
 
 
 //FUNCTIONS:
@@ -59,6 +59,7 @@ function displayRandomPoster(){
   firstDescriptor.innerText = currentCover.tagline1;
   secondDescriptor.innerText = currentCover.tagline2;
 }
+
 
 //FUNCTIONS FOR EVENT HANDLERS:
 function createCustomCover() {
@@ -106,7 +107,7 @@ function displaySavedCovers() {
   savedCoversSection.innerHTML = "";
   for (var i = 0; i < savedCovers.length; i++) {
     savedCoversSection.insertAdjacentHTML("afterbegin", `
-    <div class = "mini-cover">
+    <div class = "mini-cover" id = ${savedCovers[i].id}>
       <img class="cover-image" src=${savedCovers[i].cover}>
       <h2 class="cover-title">${savedCovers[i].title}</h2>
       <h3 class="tagline">A tale of
