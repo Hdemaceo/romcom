@@ -1,4 +1,4 @@
-// VARIABLES AND QUERY SELECTORS:
+// GLOBAL VARIABLES AND QUERY SELECTORS:
 var cover = document.querySelector(".cover-image");
 var title = document.querySelector(".cover-title");
 var firstDescriptor = document.querySelector(".tagline-1");
@@ -60,6 +60,30 @@ function displayRandomPoster(){
   secondDescriptor.innerText = currentCover.tagline2;
 }
 
+//FUNCTIONS FOR EVENT HANDLERS:
+function createCustomCover() {
+  currentCover = new Cover(
+    userCover.value,
+    userTitle.value,
+    userDescriptorOne.value,
+    userDescriptorTwo.value
+  );
+}
+
+function displayCustomCover() {
+   cover.src = currentCover.cover;
+   title.innerText = currentCover.title;
+   firstDescriptor.innerText = currentCover.tagline1;
+   secondDescriptor.innerText = currentCover.tagline2;
+ }
+
+function clearUserInput() {
+  userCover.value = "";
+  userTitle.value = "";
+  userDescriptorOne.value = "";
+  userDescriptorTwo.value = "";
+}
+
 function hasDuplicates() {
   var duplicates;
   for (var i = 0; i < savedCovers.length; i++) {
@@ -79,8 +103,9 @@ function saveCover() {
 }
 
 function displaySavedCovers() {
- for (var i = 0; i < savedCovers.length; i++) {
-   savedCoversSection.insertAdjacentHTML("afterbegin", `
+  savedCoversSection.innerHTML = "";
+  for (var i = 0; i < savedCovers.length; i++) {
+    savedCoversSection.insertAdjacentHTML("afterbegin", `
     <div class = "mini-cover">
       <img class="cover-image" src=${savedCovers[i].cover}>
       <h2 class="cover-title">${savedCovers[i].title}</h2>
@@ -88,7 +113,7 @@ function displaySavedCovers() {
       <span class="tagline-1">${savedCovers[i].tagline1}</span> and
       <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
     </div>`);
- }
+  }
 }
 
 
@@ -112,8 +137,6 @@ function formViewPageHandler() {
 }
 
 function viewSavedCoversHandler() {
-  event.preventDefault();
-  savedCoversSection.innerHTML = "";
   hideHomeViewPage();
   hideFormViewPage();
   hideRandomCoverButton();
@@ -121,29 +144,6 @@ function viewSavedCoversHandler() {
   showViewSavedCoversPage();
   showHomeButton();
   displaySavedCovers();
-}
-
-function createCustomCover() {
-  currentCover = new Cover(
-    userCover.value,
-    userTitle.value,
-    userDescriptorOne.value,
-    userDescriptorTwo.value
-  );
-}
-
-function displayCustomCover() {
-   cover.src = currentCover.cover;
-   title.innerText = currentCover.title;
-   firstDescriptor.innerText = currentCover.tagline1;
-   secondDescriptor.innerText = currentCover.tagline2;
- }
-
-function clearUserInput() {
-  userCover.value = "";
-  userTitle.value = "";
-  userDescriptorOne.value = "";
-  userDescriptorTwo.value = "";
 }
 
 function customCoverHandler() {

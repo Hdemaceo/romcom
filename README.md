@@ -26,15 +26,13 @@ Our learning goals are to understand and be able to apply the functional concept
 
 8/27: Began working on Iteration 2 of the project. The main focus of Iteration 2 is to be able to switch from the "Home" page to the "Form" page. Here, we discussed the usage of event handlers for when the "Make Your Own Cover" button is clicked. We created an event handler for the "Form" page as well as the "Home" page. Each event handler runs through a series of functions specific to the individual event performed. These functions include removing/adding the .hidden class from certain forms and buttons, as outlined in the rubric.
 
-8/28: 
+8/28: We continued with our work on Iteration 2, creating event handler functions for each event listener outlined under this portion of the project. These event handler functions involved removing and adding .hidden class when specific buttons are clicked on respective pages. We refactored some of the functionality of the event handlers to git rid of some of the bugs we experienced with toggling. On each page, we added and removed the working buttons on specified pages, according to the rubric guidelines.
 
-8/29:
+8/30: We went through and refactored our functions for our event listeners and event handlers. We worked on Iteration 3 to add functionality to the Form View Page, creating query selectors for user input variables. We created functions to allow the user’s input data to be stored once “Make My Book” button is clicked. That stored data is saved into their respective arrays and then is loaded to the main page and displayed as a new book cover.
 
-8/30:
+8/31: Refactor code that is mainly pertaining to Iteration 3 so that the data model is utilized to store user input first to then update the DOM.Then we began working on Iteration 4 which pertained to saving & viewing posters. Here, we focused on accessing our data model (more specifically, our savedCovers array) to be able to display each item as a mini cover on the “View Saved Covers” page. The mini covers have CSS stylings that were provided to us at the start of the project. We are able to successfully display our saved covers as mini covers on the "View Saved Covers" page by utilizing the insertAdjacentHTML method followed by an "afterbegin" argument and iterpolation of the mini cover class.
 
-8/31: Refactor code that is mainly pertaining to Iteration 3 so that the data model is utilized to store user input first to then update the DOM.
-
-9/1: Project due at 9pm.
+9/1: Completed Iteration 4. Project due at 9pm.
 
 
 ## Showcase ::
